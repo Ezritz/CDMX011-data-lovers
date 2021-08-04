@@ -5,10 +5,13 @@ export const getPokemonsByName = (data, selection) => {
     //console.log(data[i].name + " " +selection);
     if(data[i].name === selection){
       return data[i];
+    } if (data[i].num===selection) {
+      return data[i];
+    } else {
+      
     }
-    
   }
-  return null;
+  return data;
 };
 
 //cuantos tipos de pokemon
@@ -41,20 +44,10 @@ export const getPokemonsByType = (data, pokemonType) => {
         pokemonsType.push(pokemon);
       }
     }
-    /*if(data[i].type === pokemonType){
-      //console.log("grupo de tipo "+data[i]);
-      return data[i];
     
-    }*/
   }
   return pokemonsType;
 };
 
-/*export const getPokemonById = (data, pokemonId)=> {
-  
-}*/
 
-/*export const typeGroup = (data, group)=> {
-  let group = data.filter(data => data.type === " " );
-}*/
  

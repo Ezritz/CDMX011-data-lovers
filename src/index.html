@@ -10,12 +10,14 @@
   </head>
   <body>
 
+    <header>
+      <div class="header"> <!--esto debe estar en un header-->
+        <h2>Pokemón</h2>
+        <h4>Lidia [&] Bell</h4>
     
-    <div class="header"> <!--esto debe estar en un header-->
-      <h2>Pokemón</h2>
-      <h4>Lidia [&] Bell</h4>
-  
-    </div>
+      </div>
+    </header>
+    
 
     <div class="navbar">
       <a href="index.html">Inicio</a>
@@ -23,13 +25,13 @@
       <h3>Buscar por tipo
         <select id="tipodepokemon"></select>
       </h3> 
-      </br>
       
       <h3> Elige tu pokemon
         <select id="dropdownPokemon"></select>
       </h3>
-      </br>      
-      <input type="text" placeholder="Buscar por nombre" id="searchName"></input>
+           
+      <input type="text" placeholder="Search by Name or Number"
+      autocomplete="off"  id="searchName"/>
       <button id="search" class="add_botom">
         <ion-icon name="search-outline"></ion-icon>
       </button>
@@ -40,7 +42,7 @@
       <div class="side">
         <h2 id="pokemonInicio"></h2>
         <div>
-          <img src="" alt="" id="imgPokemon">
+          <img  id="imgPokemon">
         </div>
         <div>
           <h4 id="types-id"></h4>
@@ -49,16 +51,17 @@
       </div>
       <div class="main">
         <h2>Detalles del pokemon</h2>
-        <div class="fakeimg" style="height:200px">
+        <div class="fakeimg" >
+          <h3  id="numPokemon"> </h3>
           
-          <div class="contenedorPokemon">
-            <span class="icon">
-              <i class="flaticon-act"></i>
-            </span>
-            <label for="unpokemon" id="numPokemon"> </label>
+          <div>
+            <h3 align="left">About: </h3>
             <p id="detailsPokemon"></p>
-            
+            <h3 align="left">Weaknesses: </h3>
+            <p id="weakness"></p>
           </div>
+          
+          
         </div>
       </div>
     </div>
@@ -66,10 +69,10 @@
     
     <script src="main.js" type="module"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-    <!--<footer class="footer">
+    <footer>
       <div class="footer">
-        <h2>footer</h2>
+        <h2>Pokemons Generation I and II</h2>
       </div>
-    </footer>-->
+    </footer>
   </body>
 </html>

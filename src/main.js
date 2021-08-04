@@ -37,12 +37,13 @@ const fillPokemonDropdown=(pokemons)=>{
 
 //esta mostrando el pokemon seleccionado/buscado
 const showPokemon = (pokemon) =>{
-    console.log("chido "+pokemon);
-    document.getElementById("pokemonInicio").innerHTML = pokemon.name;
-    document.getElementById("types-id").innerHTML= pokemon.type;
+    //console.log("chido "+pokemon);
+    document.getElementById("pokemonInicio").innerHTML = pokemon.name.toUpperCase();
+    document.getElementById("types-id").innerHTML= "Type: "+pokemon.type;
     document.getElementById("imgPokemon").src = pokemon.img;
-    document.getElementById("numPokemon").innerHTML = pokemon.num;
+    document.getElementById("numPokemon").innerHTML = "Num: "+pokemon.num;
     document.getElementById("detailsPokemon").innerHTML = pokemon.about; 
+    document.getElementById("weakness").innerHTML= pokemon.weaknesses;
 }
 
 //muestra los tipos de pokemon y el primer pokemon de ese grupo
@@ -59,7 +60,7 @@ document.getElementById("dropdownPokemon").addEventListener("change",(e)=>{
 })
 
 //busqueda por nombre
-document.getElementById("search").addEventListener("click",(e)=>{
+document.getElementById("search").addEventListener("click",()=>{
     let name= document.getElementById("searchName");
     let nameValue= name.value;
     const pokemon = getPokemonsByName(pokemons, nameValue);

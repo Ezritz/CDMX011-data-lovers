@@ -7,7 +7,7 @@ describe('getPokemonsByName', () => {
     expect(typeof getPokemonsByName).toBe('function');
   });
 
-  it('deberia retornar null para nombre vacio', () => {
+  it('deberia retornar "null" para ""', () => {
     expect(getPokemonsByName()).toBe('null');
   });
 });
