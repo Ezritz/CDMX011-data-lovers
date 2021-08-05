@@ -1,6 +1,6 @@
 import { getPokemonsByName } from '../src/data.js';
-
-const pokemon = [
+import {getAllTypes} from '../src/data.js';
+const pokemons = [
   {
   "num": "001",
   "name": "bulbasaur",
@@ -495,36 +495,37 @@ const pokemon = [
   }
   },
 ]
-
-
+const types = [
+  {"grass"  : true},
+  {"fire"  : true},
+  {"poison"  : true},
+];
 describe('getPokemonsByName', () => {
-it('deberia ser una funcion', () => {
-  expect(typeof getPokemonsByName).toBe('function');
+  it('deberia ser una funcion', () => {
+    expect(typeof getPokemonsByName).toBe('function');
+  });
+
+  it('deberia retornar null para ""', () => {
+    expect(getPokemonsByName(pokemons, "")).toBe(null);
+  });
+  
+  it('deberia retornar charmeleon para "charmeleon"', () => {
+    expect(getPokemonsByName(pokemons,"charmeleon")).toBe(pokemons[4]);
+  });
+
+  it('deberia retornar bulbasaur para "001"', () => {
+    expect(getPokemonsByName(pokemons,"001")).toBe(pokemons[0]);
+  });
 });
 
-it('deberia retornar null para ""', () => {
-  expect(getPokemonsByName(pokemon)).toBe(null);
-});
-});
+describe('getAllTypes', () => {
+  it('deberia ser una funcion', () => {
+    expect(typeof getAllTypes).toBe('function');
+  });
 
-describe('getPokemonsByName', () => {
-it('deberia ser una funcion', () => {
-  expect(typeof getPokemonsByName).toBe('function');
-});
-
-it('deberia retornar "charmeleon" para "charmeleon"', () => {
-  expect(getPokemonsByName(pokemon)).toBe(null);
-});
-});
-
-describe('getPokemonsByName', () => {
-it('deberia ser una funcion', () => {
-  expect(typeof getPokemonsByName).toBe('function');
-});
-
-it('deberia retornar "bulbasaur" para "001"', () => {
-  expect(getPokemonsByName(pokemon)).toBe(null);
-});
+  it('deberia retornar new Map() para ""', () => {
+    expect(getAllTypes(pokemons)).toBe(types);
+  });
 });
 
 
