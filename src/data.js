@@ -4,14 +4,16 @@ export const getPokemonsByName = (data, selection) => {
   for (let i=0; i < data.length; i++){
     //console.log(data[i].name + " " +selection);
     if(data[i].name === selection){
+      console.log(data[i])
       return data[i];
-    } if (data[i].num===selection) {
-      return data[i];
-    } else {
       
+    } 
+    if (data[i].num===selection) {
+      return data[i];
     }
+    
   }
-  return data;
+  return null;
 };
 
 //cuantos tipos de pokemon
@@ -48,6 +50,3 @@ export const getPokemonsByType = (data, pokemonType) => {
   }
   return pokemonsType;
 };
-
-
- 
