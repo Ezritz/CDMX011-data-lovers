@@ -27,10 +27,15 @@ export const getAllTypes = (data) =>{
     for(let j= 0; j< pokemonType.length; j++){
       types.set(pokemonType[j], true);
     }
+    
   }
-  //console.log("tipos "+ types);
+  let arrTypes = [];
+  for (var [key] of types){
+    arrTypes.push(key);
+  }
+  //console.log("key "+arrTypes);
   
-  return types;
+  return arrTypes;
 };
 
 //buscara el tipo de pokemon

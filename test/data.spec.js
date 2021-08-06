@@ -495,11 +495,7 @@ const pokemons = [
   }
   },
 ]
-const types = [
-  {"grass"  : true},
-  {"fire"  : true},
-  {"poison"  : true},
-];
+const types = ["grass", "fire", "poison"];
 describe('getPokemonsByName', () => {
   it('deberia ser una funcion', () => {
     expect(typeof getPokemonsByName).toBe('function');
@@ -523,8 +519,8 @@ describe('getAllTypes', () => {
     expect(typeof getAllTypes).toBe('function');
   });
 
-  it('deberia retornar new Map() para ""', () => {
-    expect(getAllTypes(pokemons)).toBe(types);
+  it('deberia retornar arreglo con tipos diferentes', () => {
+    expect(getAllTypes(pokemons)).toEqual(expect.arrayContaining(types));
   });
 });
 
