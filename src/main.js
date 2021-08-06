@@ -10,12 +10,11 @@ const pokemons = data.pokemon;
 const fillTypeDropdown = (pokemons) =>{
     let totalTypes = getAllTypes(pokemons);
     let dp= document.getElementById("tipodepokemon");
-    const iterator = totalTypes.keys();
-    for (const key of iterator) {
+   
+    for (let i = 0; i< totalTypes.length;i++) {
         //console.log(key);
         let option = document.createElement("OPTION");
-        option.innerHTML = key;
-        
+        option.innerHTML = totalTypes[i];
         dp.options.add(option);
     }
     
@@ -23,8 +22,8 @@ const fillTypeDropdown = (pokemons) =>{
 
 //mandar los pokemon que pertenecen al tipo del primer dropdown
 const fillPokemonDropdown=(pokemons)=>{
-    console.log("aqui estoy mandando los pokemon del tipo seleccionado");
-    console.log(pokemons);
+    //console.log("aqui estoy mandando los pokemon del tipo seleccionado");
+    //console.log(pokemons);
     document.getElementById("dropdownPokemon").options.length = 0; //limpia dropdown
     let dpp = document.getElementById("dropdownPokemon");
     pokemons.forEach(element => {
