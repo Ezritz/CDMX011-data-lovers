@@ -1,5 +1,6 @@
 import { getPokemonsByName } from '../src/data.js';
 import {getAllTypes} from '../src/data.js';
+import {getPokemonsByType} from '../src/data.js';
 const pokemons = [
   {
   "num": "001",
@@ -496,6 +497,206 @@ const pokemons = [
   },
 ]
 const types = ["grass", "fire", "poison"];
+const pTypes =[  {
+  "num": "004",
+  "name": "charmander",
+  "generation": {
+    "num": "generation i",
+    "name": "kanto"
+  },
+  "about": "The flame that burns at the tip of its tail is an indication of its emotions. The flame wavers when Charmander is enjoying itself. If the Pokémon becomes enraged, the flame burns fiercely.",
+  "img": "https://www.serebii.net/pokemongo/pokemon/004.png",
+  "size": {
+    "height": "0.61 m",
+    "weight": "8.5 kg"
+  },
+  "pokemon-rarity": "normal",
+  "type": [
+    "fire"
+  ],
+  "encounter": {
+    "base-flee-rate": "0.1",
+    "base-capture-rate": "0.2"
+  },
+  "spawn-chance": "0.253",
+  "stats": {
+    "base-attack": "116",
+    "base-defense": "93",
+    "base-stamina": "118",
+    "max-cp": "980",
+    "max-hp": "105"
+  },
+  "resistant": [
+    "fire",
+    "grass",
+    "ice",
+    "bug",
+    "steel"
+  ],
+  "weaknesses": [
+    "water",
+    "ground",
+    "rock"
+  ],
+  "quick-move": [
+    {
+      "name": "ember",
+      "type": "fire",
+      "base-damage": "10",
+      "energy": "10",
+      "move-duration-seg": "1"
+    },
+    {
+      "name": "scratch",
+      "type": "normal",
+      "base-damage": "6",
+      "energy": "4",
+      "move-duration-seg": "0.5"
+    }
+  ],
+  "special-attack": [
+    {
+      "name": "flame charge",
+      "type": "fire",
+      "base-damage": "70",
+      "energy": "-33",
+      "move-duration-seg": "3.8"
+    },
+    {
+      "name": "flame burst",
+      "type": "fire",
+      "base-damage": "70",
+      "energy": "-50",
+      "move-duration-seg": "2.6"
+    },
+    {
+      "name": "flamethrower",
+      "type": "fire",
+      "base-damage": "70",
+      "energy": "-50",
+      "move-duration-seg": "2.2"
+    }
+  ],
+  "egg": "2 km",
+  "buddy-distance-km": "3",
+  "evolution": {
+    "candy": "charmander candy",
+    "next-evolution": [{
+      "num": "005",
+      "name": "charmeleon",
+      "candy-cost": "25",
+      "next-evolution": [{
+        "num": "006",
+        "name": "charizard",
+        "candy-cost": "100"
+      }]
+    }]
+  }
+  },
+  {
+  "num": "005",
+  "name": "charmeleon",
+  "generation": {
+    "num": "generation i",
+    "name": "kanto"
+  },
+  "about": "Charmeleon mercilessly destroys its foes using its sharp claws. If it encounters a strong foe, it turns aggressive. In this excited state, the flame at the tip of its tail flares with a bluish white color.",
+  "img": "https://www.serebii.net/pokemongo/pokemon/005.png",
+  "size": {
+    "height": "1.09 m",
+    "weight": "19.0 kg"
+  },
+  "pokemon-rarity": "normal",
+  "type": [
+    "fire"
+  ],
+  "encounter": {
+    "base-flee-rate": "0.07",
+    "base-capture-rate": "0.1"
+  },
+  "spawn-chance": "0.012",
+  "stats": {
+    "base-attack": "158",
+    "base-defense": "126",
+    "base-stamina": "151",
+    "max-cp": "1653",
+    "max-hp": "131"
+  },
+  "resistant": [
+    "fire",
+    "grass",
+    "ice",
+    "bug",
+    "steel"
+  ],
+  "weaknesses": [
+    "water",
+    "ground",
+    "rock"
+  ],
+  "quick-move": [
+    {
+      "name": "ember",
+      "type": "fire",
+      "base-damage": "10",
+      "energy": "10",
+      "move-duration-seg": "1"
+    },
+    {
+      "name": "fire fang",
+      "type": "fire",
+      "base-damage": "11",
+      "energy": "8",
+      "move-duration-seg": "0.9"
+    },
+    {
+      "name": "scratch",
+      "type": "normal",
+      "base-damage": "6",
+      "energy": "4",
+      "move-duration-seg": "0.5"
+    }
+  ],
+  "special-attack": [
+    {
+      "name": "fire punch",
+      "type": "fire",
+      "base-damage": "55",
+      "energy": "-33",
+      "move-duration-seg": "2.2"
+    },
+    {
+      "name": "flame burst",
+      "type": "fire",
+      "base-damage": "70",
+      "energy": "-50",
+      "move-duration-seg": "2.6"
+    },
+    {
+      "name": "flamethrower",
+      "type": "fire",
+      "base-damage": "70",
+      "energy": "-50",
+      "move-duration-seg": "2.2"
+    }
+  ],
+  "egg": "not in eggs",
+  "buddy-distance-km": "3",
+  "evolution": {
+    "candy": "charmander candy",
+    "next-evolution": [{
+      "num": "006",
+      "name": "charizard",
+      "candy-cost": "100"
+    }],
+    "prev-evolution": [{
+      "num": "004",
+      "name": "charmander",
+      "candy-cost": "25"
+    }]
+  }
+  },
+];
 describe('getPokemonsByName', () => {
   it('deberia ser una funcion', () => {
     expect(typeof getPokemonsByName).toBe('function');
@@ -524,5 +725,14 @@ describe('getAllTypes', () => {
   });
 });
 
+describe('getPokemonsByType',()=>{
+  it('deberia ser una funcion',()=>{
+    expect (typeof getPokemonsByType).toBe('function');
+  });
+
+  it('deberia retornar arreglo de pokemones de un tipo',()=>{
+    expect(getPokemonsByType(pokemons,"fire")).toMatchObject(pTypes);
+  });
+});
 
 

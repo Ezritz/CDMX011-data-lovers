@@ -43,6 +43,7 @@ const showPokemon = (pokemon) =>{
     document.getElementById("numPokemon").innerHTML = "Num: "+pokemon.num;
     document.getElementById("detailsPokemon").innerHTML = pokemon.about; 
     document.getElementById("weakness").innerHTML= pokemon.weaknesses;
+    
 }
 
 //muestra los tipos de pokemon y el primer pokemon de ese grupo
@@ -65,6 +66,95 @@ document.getElementById("search").addEventListener("click",()=>{
     const pokemon = getPokemonsByName(pokemons, nameValue);
     showPokemon(pokemon);
 })
+
+//Muestra Galeria aleatoria
+window.onload = function () {
+    //Variables
+    const imagenesp = [];
+    /*Crear un numero aleaotrio, elegir imagenes al azar */
+    var numeroAleatorio = 0;
+    let nombrePokemonesGaleria=[];
+    for (let i=0; i<25; i++){
+        numeroAleatorio = Math.floor(Math.random() * 250);
+        /*guardar la imagen*/
+        const pokemon = pokemons[numeroAleatorio];
+        console.log(pokemon);
+        imagenesp[i] = pokemon.img;
+        nombrePokemonesGaleria[i]=pokemon.name.toUpperCase();
+    }
+    const tiempo = 1000;
+    let posicionActual = 0;
+    /*Esta variable almacena un objeto, por eso se declara con $ */
+    let $botonRetroceder = document.querySelector('#retroceder');
+    let $botonAvanzar = document.querySelector('#avanzar');
+    let $imgCarrousel = document.querySelector('#imgCarrousel');
+    let $parrafoNombre= document.querySelector('#type_galeria');
+    let $botonPlay = document.querySelector('#play');
+    let $botonStop = document.querySelector('#stop');
+    let intervalo;
+    // Funciones
+    /**
+     * Funcion que cambia la foto en la siguiente posicion
+     */
+    function pasarFoto() {
+        if(posicionActual >= imagenesp.length - 1) {
+            posicionActual = 0;
+        } else {
+            posicionActual++;
+        }
+        renderizarImagen();
+    }
+    /**
+     * Funcion que cambia la foto en la anterior posicion
+     */
+    function retrocederFoto() {
+        if(posicionActual <= 0) {
+            posicionActual = imagenesp.length - 1;
+        } else {
+            posicionActual--;
+        }
+        renderizarImagen();
+    }
+    /**
+     * Funcion que actualiza la imagen de imagen dependiendo de posicionActual
+     */
+    /*Aquí es donde se mete la imagen 
+    ese div cambia su background
+    vas a air a imagenesp actual*/
+    function renderizarImagen () {
+        $imgCarrousel.style.backgroundImage = `url(${imagenesp[posicionActual]})`;
+        $parrafoNombre.innerHTML= nombrePokemonesGaleria[posicionActual];
+    }
+    /**
+     * Activa el autoplay de la imagen
+     */
+    function playIntervalo() {
+        intervalo = setInterval(pasarFoto, tiempo);
+        // Desactivamos los botones de control
+        $botonAvanzar.setAttribute('disabled', true);
+        $botonRetroceder.setAttribute('disabled', true);
+        $botonPlay.setAttribute('disabled', true);
+        $botonStop.removeAttribute('disabled');
+    }
+    /**
+     * Para el autoplay de la imagen
+     */
+    function stopIntervalo() {
+        clearInterval(intervalo);
+        // Activamos los botones de control
+        $botonAvanzar.removeAttribute('disabled');
+        $botonRetroceder.removeAttribute('disabled');
+        $botonPlay.removeAttribute('disabled');
+        $botonStop.setAttribute('disabled', true);
+    }
+    // Eventos
+    $botonAvanzar.addEventListener('click', pasarFoto);
+    $botonRetroceder.addEventListener('click', retrocederFoto);
+    $botonPlay.addEventListener('click', playIntervalo);
+    $botonStop.addEventListener('click', stopIntervalo);
+    // Iniciar
+    renderizarImagen();
+}
 
 //las funciones que cargan al inicio de la pagina deben ir al ultimo del archivo
 fillTypeDropdown(pokemons);

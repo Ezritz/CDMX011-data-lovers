@@ -55,3 +55,4 @@ export const getPokemonsByType = (data, pokemonType) => {
   }
   return pokemonsType;
 };
+
