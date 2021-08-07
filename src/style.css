@@ -1,15 +1,18 @@
 * {
     box-sizing: border-box;
+    
 }
 /* Style the body */
 body {
-    font-family: Arial;
-    margin: 0;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin: 0px auto;
     background-color: white;
     width: 100%;
     height: 100vh;
     overflow: scroll;
     border: 1px solid #ccc;
+    overflow: auto;  
+    scroll-snap-type: y mandatory;
 }
 /* Header/logo Title */
 .header {
@@ -18,8 +21,11 @@ body {
     background-repeat: no-repeat;
     background-position: center center;
     padding: 60px;
-    text-align: left;
+    /*text-align: left;
     color: brown;
+    font-family: fantasy;*/
+    
+    
 }
 /* Style the top navigation bar */
 .navbar {
@@ -65,6 +71,8 @@ body {
     border: 5px solid white;
     border-radius: 20px;
     text-align: center;
+    
+    
 }
 #types-id{
     padding: 10px 20px;
@@ -100,6 +108,8 @@ body {
     width: 100%;
     padding: 20px;
     border-radius: 20px;
+    margin: auto;
+    overflow: scroll;
 }
 /* Footer */
 .footer {
@@ -146,3 +156,87 @@ body {
     height: min-content;
 }
 
+/*inicia carrusel*/
+.carousel {
+    max-width: 50px;
+    margin: 0 auto;
+    display: flex;
+    position: fixed;
+    left: 50%;
+    padding-right: 50px;
+}
+#imgCarrousel {
+    margin: 0 auto;
+    width: 120px;
+    height:120px;
+    background-size:cover;
+    align-items: center;
+}
+/*Botones*/
+#avanzar{
+    font-size: 35px;
+    background:none;
+    border: none;
+    color: #28B9B5;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+    margin-left: 10px;
+    cursor: pointer;
+}
+/*Botones*/
+#play{
+    font-size: 35px;
+    background:none;
+    border: none;
+    color: #28B9B5;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+    margin-left: 10px;
+    cursor: pointer;
+}
+/*Botones*/
+#stop{
+    font-size: 35px;
+    background:none;
+    border: none;
+    color: #28B9B5;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+    margin-left: 10px;
+    cursor: pointer;
+    
+}
+/*Botones*/
+#retroceder{
+    font-size: 35px;
+    background:none;
+    border: none;
+    color: #28B9B5;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+    margin-left: 10px;
+    cursor: pointer;
+}
+/*Botones*/
+#type_galeria{
+    text-align: center;
+    font-size: 25px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    
+}
+.target{
+    width: 250px;
+    margin: 0 auto;
+    text-align: center;
+}
+.target-effect{
+    width: 240px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    text-align: center;
+    position: relative;
+    
+}
