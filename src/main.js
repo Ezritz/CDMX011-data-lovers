@@ -39,11 +39,12 @@ const showPokemon = (pokemon) =>{
     //console.log("chido "+pokemon);
     document.getElementById("pokemonInicio").innerHTML = pokemon.name.toUpperCase();
     document.getElementById("types-id").innerHTML= "Type: "+pokemon.type;
+    document.getElementById("generation").innerHTML= "Generation: "+pokemon.generation.name;
     document.getElementById("imgPokemon").src = pokemon.img;
     document.getElementById("numPokemon").innerHTML = "Num: "+pokemon.num;
     document.getElementById("detailsPokemon").innerHTML = pokemon.about; 
     document.getElementById("weakness").innerHTML= pokemon.weaknesses;
-    
+    document.getElementById("resistant").innerHTML= pokemon.resistant;
 }
 
 //muestra los tipos de pokemon y el primer pokemon de ese grupo
@@ -122,7 +123,7 @@ window.onload = function () {
     ese div cambia su background
     vas a air a imagenesp actual*/
     function renderizarImagen () {
-        $imgCarrousel.style.backgroundImage = `url(${imagenesp[posicionActual]})`;
+        $imgCarrousel.src = imagenesp[posicionActual];
         $parrafoNombre.innerHTML= nombrePokemonesGaleria[posicionActual];
     }
     /**
