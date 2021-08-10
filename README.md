@@ -13,25 +13,18 @@
 * [9. Checklist](#9-checklist)
 
 ***
+Lidia Escoto, Belem Hernandez DL-7<Laboratoria>
+## 1. DATA LOVERS
+Pokemon web es una página de consulta de datos relevantes sobre pokemones. El usuario podra realizar una busqueda sobre un pokemon ingresando el nombre o numero si es que ya se conoce previamente, o de igual forma puede acceder a la informacion de los pokemones con la barra de busqueda que se muestra en el menu principal, con el que pueden filtrar ya sea por el tipo de pokemon que se desea, y con este mismo el listado de los pokemones que pertenecen a ese tipo.
+La informacion se muestra en dos tarjetas por pokemon, una contiene la imagen, tipo y generacion a la que pertenece el pokemon seleccionado, y la ultima, muestra la informacion sobre su descripcion, debilidades, fortalezas, etc.
+El proposito de la pagina es que el usuario pueda acceder a las caracteristicas de los pokemones para conocerlos, jugar, etc, segun sea el caso pero manteniendo el acceso a sus caracteristicas en cualquier momento.
 
-## 1. Preámbulo
 
-Según [Forbes](https://www.forbes.com/sites/bernardmarr/2018/05/21/how-much-data-do-we-create-every-day-the-mind-blowing-stats-everyone-should-read),
-el 90% de la data que existe hoy ha sido creada durante los últimos dos años.
-Cada día generamos 2.5 millones de terabytes de datos, una cifra sin
-precedentes.
+## 2. Prototipo de baja fidelidad
+![Screenshot](./imgs/prototipoBF1.png)
+![Screenshot](./imgs/prototipoBF2.png)
 
-No obstante, los datos por sí mismos son de poca utilidad. Para que esas
-grandes cantidades de datos se conviertan en **información** fácil de leer para
-los usuarios, necesitamos entender y procesar estos datos. Una manera simple de
-hacerlo es creando _interfaces_ y _visualizaciones_.
+Listado de problemas detectados a traves de tests de usabilidad:
 
-En la siguiente imagen, podrás ver cómo con la data que que se ve en la parte
-izquierda se puede construir una interfaz amigable y entendible por el usuario
-al lado derecho.
-
-![json-interfaz](https://lh4.googleusercontent.com/Tn-RPXS26pVvOTdUzRT1KVaJ-_QbFs9SpcGLxSPE43fgbHaXtFgMUInuDt7kV41DkT1j8Tt29V0LxQW7SMtC6digOIhfTXSBKdwI08wUwhD3RAqlwy0hjfmhZ2BFe91mtmCSEqysfgk)
-
-## 2. Resumen del proyecto
-
+-Con el prototipo inicial, se tenia el objetivo de mostrar una galeria de pokemones con el cual al momento de tener la imagen de cada uno, al dar click se mostrara la informacion de cada uno, sin embargo, encontramos la problematica de la configuracion de distintas pantallas,
 
