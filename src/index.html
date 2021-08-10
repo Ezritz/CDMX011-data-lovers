@@ -11,10 +11,26 @@
   <body>
 
     <header>
-      <div class="header"> <!--esto debe estar en un header-->
-        <h2>Pokemón</h2>
-        <h4>Lidia [&] Bell</h4>
-    
+      <div id="gallery" class="header"> <!--esto debe estar en un header-->
+        <h1>Pokemón</h1>
+        <h1>Web</h1>
+        <div class="right">
+          <div class="target">
+            <div class="column">
+              <div >
+                <p></p>
+              </div>
+              <div >
+                <img  id="imgCarrousel" width="120px" height="120px">
+              </div>
+              <div class="center">
+                <button id="retroceder"><ion-icon name="chevron-back-outline"></ion-icon></button>
+                <p id="type_galeria"></p>
+                <button id="avanzar"><ion-icon name="chevron-forward-outline"></ion-icon></button>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
     
@@ -30,7 +46,7 @@
         <select id="dropdownPokemon"></select>
       </h3>
            
-      <input type="text" placeholder="Search by Name or Number"
+      <input type="text" placeholder="Search by Name or Num"
       autocomplete="off"  id="searchName"/>
       <button id="search" class="add_botom">
         <ion-icon name="search-outline"></ion-icon>
@@ -40,13 +56,20 @@
     <!--the flexible grid "content"-->
     <div class="row"> 
       <div class="side">
+        
         <h2 id="pokemonInicio"></h2>
         <div>
           <img  id="imgPokemon">
         </div>
-        <div>
-          <h4 id="types-id"></h4>
+        <div class="center">
+          
+              <h4 id="types-id"></h4>
+            
+            
+              <h4 id="generation"></h4>
+            
         </div>
+        
         
       </div>
       <div class="main">
@@ -59,30 +82,16 @@
             <p id="detailsPokemon"></p>
             <h3 align="left">Weaknesses: </h3>
             <p id="weakness"></p>
+            <h3 align="left">Resistant: </h3>
+            <p id="resistant"></p>
           </div>
         </div>
       </div>
     </div>
     <!--<h2>Nuestra Galería</h2>-->
-    <div class="carousel">
-      <div>
-        <button id="retroceder"><ion-icon name="chevron-back-outline"></ion-icon></button>
-      </div>
-      <table> 
-        <div class="target">
-          <div class="target-effect">
-            <img  id="imgCarrousel" width="120px" height="120px">
-            <p id="type_galeria"></p>
-          </div>
-        </div>
-        
-      </table> 
-      <div>
-        <button id="avanzar"><ion-icon name="chevron-forward-outline"></ion-icon></button>
-      </div>
-    </div>
-    <button id="play" class="normal"><ion-icon name="play-circle-outline"></ion-icon></button>
-    <button id="stop" class="normal" disabled><ion-icon name="pause-circle-outline"></ion-icon></button>
+    
+    <button id="play" class="normal" style=display:none><ion-icon name="play-circle-outline"></ion-icon></button>
+    <button id="stop" class="normal" style=display:none><ion-icon name="pause-circle-outline"></ion-icon></button>
     
     
     
