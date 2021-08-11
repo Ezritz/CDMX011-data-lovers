@@ -2,16 +2,20 @@
     box-sizing: border-box;
     
 }
+h1{
+    text-align: left;
+}
 /* Style the body */
 body {
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     background: linear-gradient(rgb(202, 148, 48),rgb(189, 78, 78),rgb(204, 204, 85));
     margin: 0px auto;
-    background-color: white;
     width: 100%;
     height: 100vh;
     border: 1px solid #ccc;
+    display: block;
+    
 }
 /* Header/logo Title */
 header {
@@ -22,12 +26,14 @@ header {
     background-repeat: no-repeat;
     background-position: center;*/
     /*display: flex;*/
+    background-position: center center;
     padding: 40px;
     align-items: center;
     /*text-align: left;
     color: brown;
     font-family: fantasy;*/
     clear: both;
+    
     
     
     
@@ -59,6 +65,9 @@ header {
     background-color: #333;
     color: #ddd;;
     align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    
     
 }
 /* Style the navigation bar links */
@@ -136,7 +145,7 @@ header {
     text-transform: uppercase;
     border-radius: 10px;
     background-color: #219ebc;
-    max-width: 400px;
+    max-width: 250px;
     min-width: 100px;
 }
 
@@ -155,7 +164,7 @@ header {
     height: 250px;
     padding: 20px;
     border-radius: 20px;
-    margin: inherit;
+    margin: auto;
     overflow: scroll;
 }
 /* Footer */
@@ -176,21 +185,21 @@ header {
 }
 /* Responsive layout - when the screen is less than 700px wide, make the two columns stack on top of each other instead of next to each other */
 @media screen and (max-width: 700px) {
-    .row, .navbar, .main, .header{   
+    .row, .navbar {   
         flex-direction: column;
         
     }
 }
-@media screen and (max-width: 1200px) and (min-width: 701px) {
-    .row, .navbar, .main, .header{   
+/*@media screen and (max-width: 1200px) and (min-width: 701px) {
+    .row, .navbar, .main{   
         flex-direction: column;
     }
 }
 @media screen and (min-width: 1201px) {
-    .row, .navbar, .main, .header{   
+    .row, .navbar, .main{   
         flex-direction: column;
     }
-}
+}*/
 .add_botom:active { transform: translateY(2px); }
 .add_botom {
     font-size: 35px;
@@ -298,6 +307,6 @@ header {
     width: 240px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     text-align: center;
-    position: initial;
+    position: relative;
     
 }
