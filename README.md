@@ -33,10 +33,10 @@ Listado de problemas detectados a traves de tests de usabilidad:
 
 Este prototipo es por el que optamos para brindar la funcionalidad y vista de la pagina
 
-##Prototipo Final
+##  Prototipo Final
 ![Screenshot](./prototipoAlta.png)
 
-##3. Historias de usuario
+## 3. Historias de usuario
 *Historia de Usuario 1: Seleccionar datos
 
 YO COMO usuario QUIERO QUE la pagina contenga los datos que considero mas relevantes de los pokemones PARA elegir/visualizar la informacion que mas me interesa.
@@ -68,7 +68,7 @@ Criterios de aceptación: El usuario podrá ver 10 imágenes de pokemones al aza
 
 Definición de terminado: Las imágenes serán todas tomadas de la data, la informacion de cada pokemon es mostrada en un mismo contenedor, se puede subir o bajar con scroll, Se mantiene los tamaños de contenedores para evitar el crecimiento de los mismos en pagina al agregar mas informacion, Los test unitarios estan completos.
 
-##Links:
+## Links:
 *Trello https://trello.com/b/MaxrWwju/data-lovers
 
 
