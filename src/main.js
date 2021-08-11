@@ -43,8 +43,8 @@ const showPokemon = (pokemon) =>{
     document.getElementById("imgPokemon").src = pokemon.img;
     document.getElementById("numPokemon").innerHTML = "Num: "+pokemon.num;
     document.getElementById("detailsPokemon").innerHTML = pokemon.about; 
-    document.getElementById("weakness").innerHTML= pokemon.weaknesses;
-    document.getElementById("resistant").innerHTML= pokemon.resistant;
+    document.getElementById("weakness").innerHTML= pokemon.weaknesses.join(', ');
+    document.getElementById("resistant").innerHTML= pokemon.resistant.join(', ');
 }
 
 //muestra los tipos de pokemon y el primer pokemon de ese grupo
