@@ -1,6 +1,4 @@
-import {getPokemonsByName} from './data.js';
-import {getPokemonsByType} from './data.js';
-import {getAllTypes} from './data.js';
+import {getPokemonsByName,getPokemonsByType,getAllTypes,sortData} from './data.js';
 import data from './data/pokemon/pokemon.js';
 
 //sacar arreglo de pokemons y lo pone en pokemons
@@ -47,11 +45,20 @@ const showPokemon = (pokemon) =>{
     document.getElementById("resistant").innerHTML= pokemon.resistant.join(', ');
 }
 
+document.getElementById("sortPokemon").addEventListener("change",(e)=>{
+    let pokemonsSort = sortData(pokemons, e.target.value);
+    let pType = document.getElementById("tipodepokemon").value;
+    let orderAllTypes = getPokemonsByType(pokemonsSort, pType);
+    fillPokemonDropdown(orderAllTypes);
+    showPokemon(orderAllTypes[0]);
+})
 //muestra los tipos de pokemon y el primer pokemon de ese grupo
 document.getElementById("tipodepokemon").addEventListener("change",(e)=>{
     let p = getPokemonsByType(pokemons,e.target.value);
-    fillPokemonDropdown(p);
-    showPokemon(p[0]);
+    let optionOrder= document.getElementById("sortPokemon").value;
+    let pOrder = sortData(p, optionOrder);
+    fillPokemonDropdown(pOrder);
+    showPokemon(pOrder[0]);
 })
 
 //listado de pokemones del tipo seleccionado
@@ -60,6 +67,8 @@ document.getElementById("dropdownPokemon").addEventListener("change",(e)=>{
     showPokemon(pSelected);
 })
 
+
+
 //busqueda por nombre
 document.getElementById("search").addEventListener("click",()=>{
     let name= document.getElementById("searchName");
@@ -67,6 +76,7 @@ document.getElementById("search").addEventListener("click",()=>{
     const pokemon = getPokemonsByName(pokemons, nameValue);
     showPokemon(pokemon);
 })
+
 
 //Muestra Galeria aleatoria
 window.onload = function () {
@@ -79,7 +89,7 @@ window.onload = function () {
         numeroAleatorio = Math.floor(Math.random() * 250);
         /*guardar la imagen*/
         const pokemon = pokemons[numeroAleatorio];
-        console.log(pokemon);
+        
         imagenesp[i] = pokemon.img;
         nombrePokemonesGaleria[i]=pokemon.name.toUpperCase();
     }
@@ -159,7 +169,7 @@ window.onload = function () {
 
 //las funciones que cargan al inicio de la pagina deben ir al ultimo del archivo
 fillTypeDropdown(pokemons);
-fillPokemonDropdown(pokemons);
+fillPokemonDropdown(sortData( getPokemonsByType(pokemons, "grass"),"az"));
 showPokemon(pokemons[0]);
 /*
 console.log(getPokemonsByName(pokemons, "eevee")); //buscando un nombre
