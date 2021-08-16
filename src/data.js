@@ -5,7 +5,7 @@ export const getPokemonsByName = (data, selection) => {
     //console.log(data[i].name + " " +selection);
     if(data[i].name === selection){
       
-      return data[i];
+      return data[i]; 
       
     } 
     if (data[i].num===selection) {
@@ -56,3 +56,22 @@ export const getPokemonsByType = (data, pokemonType) => {
   return pokemonsType;
 };
 
+export const sortData = (data,userOption) => {
+  let pokemonsNames=[];
+  let pokemonsMap = new Map();
+  
+  for (let i = 0; i<data.length; i++){
+    pokemonsNames.push(data[i].name);
+    pokemonsMap.set(data[i].name, data[i]);
+  }
+  pokemonsNames.sort();
+  if(userOption ==="za"){
+    pokemonsNames.reverse();
+  }
+  let pokemonsOrder =[];
+  for (let i= 0; i< pokemonsNames.length;i++){
+    let pokemon = pokemonsMap.get(pokemonsNames[i]);
+    pokemonsOrder.push(pokemon);
+  }
+  return pokemonsOrder;
+}

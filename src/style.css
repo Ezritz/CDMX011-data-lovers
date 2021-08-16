@@ -9,7 +9,7 @@
     
 }
 h1{
-    color: #ff8811;
+    color: #f4a261;
     text-align: left;
     /*font-family: 'Indie Flower', cursive;*/
     font-family: 'Luckiest Guy', cursive;
@@ -124,6 +124,12 @@ header {
     font-size: 20px;
 }
 #dropdownPokemon{
+    font-family: 'Indie Flower', cursive;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+#sortPokemon{
     font-family: 'Indie Flower', cursive;
     font-size: 20px;
     text-align: center;
